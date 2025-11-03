@@ -1,4 +1,3 @@
-app.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,11 +14,8 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminOrders from "./pages/AdminOrders";
 import AdminProducts from "./pages/AdminProducts";
-import AdminSettings from "./pages/AdminSettings";
 import MyOrders from "./pages/MyOrders";
 import NotFound from "./pages/NotFound";
-import Documentation from "./pages/Documentation";
-import Docs from "./pages/Docs";
 import { AdminLayout } from "./components/AdminLayout";
 
 const App = () => (
@@ -35,17 +31,15 @@ const App = () => (
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/about" element={<About />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/docs" element={<Docs />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
           <Route path="products" element={<AdminProducts />} />
           <Route path="orders" element={<AdminOrders />} />
-          <Route path="settings" element={<AdminSettings />} />
         </Route>
         <Route path="/my-orders" element={<MyOrders />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
